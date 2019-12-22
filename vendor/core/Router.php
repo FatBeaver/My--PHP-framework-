@@ -1,5 +1,9 @@
 <?php
 
+namespace vendor\core;
+
+use Debug;
+
 class Router 
 {
     protected static $routes = [];
@@ -42,13 +46,20 @@ class Router
     }
 
     public static function dispatch($queryString)
-    {
+    {   
+        $queryString = self::removeQueryString($queryString);
+
         if (self::matchRoute($queryString)) {
-            $controllerClass = self::upperCamelCase(self::$route['controller']);
+            $controllerClass = 'app\\controllers\\' . self::upperCamelCase(self::$route['controller']);
             $actionController = 'action' . self::upperCamelCase(self::$route['action']);
+
             if (class_exists($controllerClass)) {
                 if (method_exists($controllerClass, $actionController)) {
-                    $controllerObject = new $controllerClass;
+                    $controllerObject = new $controllerClass(
+                        self::upperCamelCase(self::$route['controller']), 
+                        self::$route['action']
+                    );
+                    $controllerObject->$actionController();
                 } else {
                     echo "Method $actionController non exists in controller $controllerClass";
                 }
@@ -67,5 +78,18 @@ class Router
         $string = ucwords($string);
         $string = str_replace(' ', '', $string);
         return $string;
+    }
+
+    protected static function removeQueryString($queryString)
+    {   
+        if ($queryString) {
+            $params = explode('&', $queryString, 2);
+            if (false === strpos($params[0], '=')) {
+                return rtrim($params[0], '/');
+            } else {
+                return '';
+            }
+        }
+        return $queryString;
     }
 }
