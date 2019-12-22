@@ -56,10 +56,12 @@ class Router
             if (class_exists($controllerClass)) {
                 if (method_exists($controllerClass, $actionController)) {
                     $controllerObject = new $controllerClass(
+                        self::$route,
                         self::upperCamelCase(self::$route['controller']), 
                         self::$route['action']
                     );
                     $controllerObject->$actionController();
+                    $controllerObject->getView();
                 } else {
                     echo "Method $actionController non exists in controller $controllerClass";
                 }

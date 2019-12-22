@@ -4,14 +4,31 @@ namespace vendor\core\base;
 
 abstract class Controller
 {
-    public $class;
+    public $route;
 
-    public $action;
+    public $viewDir;
 
-    public function __construct($class, $action)
+    public $viewFile;
+
+    public $layout;
+
+    public $vars = [];
+
+    public function __construct($route, $class, $action)
     {   
-        $this->class = $class;
-        $this->action = $action;
-        //include_once APP . "/views/{$this->class}/{$this->action}.php";
+        $this->route = $route;
+        $this->viewDir = $class;
+        $this->viewFile = $action;
+    }
+
+    public function getView()
+    {
+        $viewObject = new View($this->route, $this->layout, $this->viewFile);
+        $viewObject->render($this->vars);
+    }
+
+    public function setData($vars)
+    {
+        $this->vars = $vars;
     }
 } 
