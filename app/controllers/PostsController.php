@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use vendor\core\base\Controller;
 
-class Posts extends Controller
+class PostsController extends Controller
 {   
 
     public function actionIndex()

@@ -1,7 +1,7 @@
 <?php
 
 use vendor\core\Router;
-
+use vendor\core\Registry;
 
 $queryString = $_SERVER['QUERY_STRING'];
 
@@ -12,6 +12,7 @@ define('CORE', dirname(__DIR__) . '/vendor/core');
 define('ROOT', dirname(__DIR__));
 define('APP', dirname(__DIR__) . '/app');
 define('LAYOUT', 'default');
+define('LIBS', dirname(__DIR__) . '/vendor/libs');
 
 spl_autoload_register(function($class) {
     $file = ROOT . '/' . str_replace('\\', '/', $class) . '.php';
@@ -20,11 +21,13 @@ spl_autoload_register(function($class) {
     }
 });
 
+$GC = Registry::instance();
+
 Router::add('^posts-new/(?P<action>[a-z-]+)/(?P<alias>[a-z-]+)$', ['controller' => 'posts-new']);
 Router::add('^posts-new/(?P<alias>[a-z-]+)$', ['controller' => 'posts-new', 'action' => 'index']);
 
 // ========== DEFAULT ROUTE ==========
-Router::add('^$', ['controller' => 'Main', 'action' => 'index']);
+Router::add('^$', ['controller' => 'main', 'action' => 'index']);
 Router::add('^(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$');
 
 Router::dispatch($queryString);

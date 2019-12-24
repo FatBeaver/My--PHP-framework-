@@ -50,7 +50,8 @@ class Router
         $queryString = self::removeQueryString($queryString);
 
         if (self::matchRoute($queryString)) {
-            $controllerClass = 'app\\controllers\\' . self::upperCamelCase(self::$route['controller']);
+            $controllerClass = 'app\\controllers\\' 
+            . self::upperCamelCase(self::$route['controller']) . 'Controller';
             $actionController = 'action' . self::upperCamelCase(self::$route['action']);
 
             if (class_exists($controllerClass)) {
