@@ -1,5 +1,7 @@
 <?php
 
+namespace vendor\libs;
+
 class Debug 
 {
     public static function print($value)

@@ -1,17 +1,15 @@
 <?php
 
 use vendor\core\Router;
-use vendor\core\Registry;
 
 $queryString = $_SERVER['QUERY_STRING'];
-
-require_once '../vendor/libs/Debug.php';
 
 define('WWW', __DIR__);
 define('CORE', dirname(__DIR__) . '/vendor/core');
 define('ROOT', dirname(__DIR__));
 define('APP', dirname(__DIR__) . '/app');
 define('LAYOUT', 'default');
+define('CACHE', dirname(__DIR__) . '/tmp/cache');
 define('LIBS', dirname(__DIR__) . '/vendor/libs');
 
 spl_autoload_register(function($class) {
@@ -21,7 +19,7 @@ spl_autoload_register(function($class) {
     }
 });
 
-$GC = Registry::instance();
+new \vendor\core\base\App();
 
 Router::add('^posts-new/(?P<action>[a-z-]+)/(?P<alias>[a-z-]+)$', ['controller' => 'posts-new']);
 Router::add('^posts-new/(?P<alias>[a-z-]+)$', ['controller' => 'posts-new', 'action' => 'index']);
