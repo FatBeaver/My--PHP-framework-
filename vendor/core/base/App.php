@@ -11,5 +11,6 @@ class App
     public function __construct()
     {
         self::$app = Registry::instance();
+        new ErrorHandler();
     }
 }

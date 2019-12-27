@@ -3,6 +3,7 @@
 namespace vendor\core;
 
 use Debug;
+use Exception;
 
 class Router 
 {
@@ -64,14 +65,15 @@ class Router
                     $controllerObject->$actionController();
                     $controllerObject->getView();
                 } else {
-                    echo "Method $actionController non exists in controller $controllerClass";
+                    throw new Exception("Method $actionController non 
+                    exists in controller $controllerClass", 404);
                 }
             } else {
-                echo 'Controller ' . $controllerClass . ' non exists';
+                throw new Exception("Method $actionController non 
+                exists in controller $controllerClass", 404);
             }
         } else {
-            http_response_code(404);
-            echo 'Страница не найденна';
+            throw new Exception("Non-correct query-string", 404);
         }
     }
 

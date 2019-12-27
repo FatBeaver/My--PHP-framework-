@@ -1,0 +1,37 @@
+[27-12-2019 20:14:53];
+        Текст ошибки: Uncaught TypeError: Argument 1 passed to vendor\core\base\ErrorHandler::exceptionHandler() must be an instance of Exception, instance of ParseError given in /var/www/epframe.com/vendor/core/base/ErrorHandler.php:40
+Stack trace:
+#0 [internal function]: vendor\core\base\ErrorHandler->exceptionHandler(Object(ParseError))
+#1 {main}
+  thrown;
+Файл ошибки: /var/www/epframe.com/vendor/core/base/ErrorHandler.php;
+        Строка ошибки: 40;
+        //============================================//
+
+[27-12-2019 20:16:55];
+        Текст ошибки: syntax error, unexpected '$allPosts' (T_VARIABLE);
+Файл ошибки: /var/www/epframe.com/app/controllers/MainController.php;
+        Строка ошибки: 16;
+        //============================================//
+
+[27-12-2019 20:19:04];
+        Текст ошибки: Method actionAdsa non 
+                    exists in controller app\controllers\MainController;
+Файл ошибки: /var/www/epframe.com/vendor/core/Router.php;
+        Строка ошибки: 68;
+        //============================================//
+
+[27-12-2019 20:19:13];
+        Текст ошибки: Method actionAd non 
+                    exists in controller app\controllers\MainController;
+Файл ошибки: /var/www/epframe.com/vendor/core/Router.php;
+        Строка ошибки: 68;
+        //============================================//
+
+[27-12-2019 20:19:16];
+        Текст ошибки: Method actionAdd non 
+                    exists in controller app\controllers\MainController;
+Файл ошибки: /var/www/epframe.com/vendor/core/Router.php;
+        Строка ошибки: 68;
+        //============================================//
+
