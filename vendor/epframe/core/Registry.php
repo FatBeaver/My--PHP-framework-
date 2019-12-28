@@ -1,6 +1,6 @@
 <?php
 
-namespace vendor\core;
+namespace epframe\core;
 
 class Registry
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace vendor\core\base;
+namespace epframe\core\base;
 
-use vendor\core\Db;
+use epframe\core\Db;
 
 abstract class Model 
 {

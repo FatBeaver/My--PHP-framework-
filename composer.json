@@ -1,0 +1,10 @@
+{
+    "name": "epframe/epframe",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "epframe\\": "vendor/epframe",
+            "app\\": "app"
+        }
+    }
+}

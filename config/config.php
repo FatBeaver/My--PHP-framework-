@@ -2,8 +2,8 @@
 
 $config = [
     'components' => [
-        'cache' => 'vendor\libs\Cache',
-        'test' => 'vendor\libs\Test',
+        'cache' => 'epframe\libs\Cache',
+        'test' => 'epframe\libs\Test',
     ],
     'db' => [
         'dsn' => 'mysql:host=localhost;dbname=epframe;charset=utf8',

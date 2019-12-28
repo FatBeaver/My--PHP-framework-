@@ -3,8 +3,8 @@
 namespace app\controllers;
 
 use R;
-use vendor\core\base\App;
-use vendor\core\base\Controller;
+use epframe\core\base\App;
+use epframe\core\base\Controller;
 use app\models\Main;
 
 class MainController extends Controller 
@@ -18,7 +18,7 @@ class MainController extends Controller
             $allPosts = R::findAll('posts');
             App::$app->cache->set('posts', $allPosts);
         } 
-        \vendor\core\base\View::setMeta("INDEX", "Hello", "World");
+        \epframe\core\base\View::setMeta("INDEX", "Hello", "World");
         $this->setData(['allPosts' => $allPosts]);
     }
 

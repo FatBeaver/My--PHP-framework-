@@ -1,6 +1,6 @@
 <?php
 
-namespace vendor\core\base;
+namespace epframe\core\base;
 
 class ErrorHandler 
 {

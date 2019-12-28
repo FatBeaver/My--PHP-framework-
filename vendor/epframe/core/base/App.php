@@ -1,8 +1,8 @@
 <?php
 
-namespace vendor\core\base;
+namespace epframe\core\base;
 
-use vendor\core\Registry;
+use epframe\core\Registry;
 
 class App 
 {

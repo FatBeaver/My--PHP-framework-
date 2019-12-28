@@ -35,3 +35,39 @@ Stack trace:
         Строка ошибки: 68;
         //============================================//
 
+[28-12-2019 08:55:51];
+        Текст ошибки: Non-correct query-string;
+Файл ошибки: /var/www/epframe.com/vendor/core/Router.php;
+        Строка ошибки: 76;
+        //============================================//
+
+[28-12-2019 14:28:53];
+        Текст ошибки: Class 'vendor\core\base\Controller' not found;
+Файл ошибки: /var/www/epframe.com/app/controllers/MainController.php;
+        Строка ошибки: 10;
+        //============================================//
+
+[28-12-2019 14:28:53];
+        Текст ошибки: Non-correct query-string;
+Файл ошибки: /var/www/epframe.com/vendor/epframe/core/Router.php;
+        Строка ошибки: 76;
+        //============================================//
+
+[28-12-2019 14:29:36];
+        Текст ошибки: Class 'vendor\core\base\Model' not found;
+Файл ошибки: /var/www/epframe.com/app/models/Main.php;
+        Строка ошибки: 7;
+        //============================================//
+
+[28-12-2019 14:31:07];
+        Текст ошибки: Class 'vendor\core\base\View' not found;
+Файл ошибки: /var/www/epframe.com/app/views/layouts/default.php;
+        Строка ошибки: 11;
+        //============================================//
+
+[28-12-2019 14:31:10];
+        Текст ошибки: Class 'vendor\core\base\View' not found;
+Файл ошибки: /var/www/epframe.com/app/views/layouts/default.php;
+        Строка ошибки: 11;
+        //============================================//
+
